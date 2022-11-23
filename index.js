@@ -12,10 +12,10 @@ const input = process.argv[2]; //node user input
 const langCode = franc(input); //franc = method to detect the language of text
 
 if (langCode === "und") {
-    console.log("Undetected Language. Please try again with more sample text!".bgMagenta);
+    console.log("Undetected Language. Please try again with more sample text!".red);
 } else {
     const langugage = langs.where("3", langCode); //lang = language library that represents languages in 3 language codes.
-    console.log(`Our best guess is: ${langugage.name}`.brightBlue);
+    console.log(`Our best guess is: ${langugage.name}`.bgMagenta);
 }
 
 
