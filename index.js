@@ -8,10 +8,11 @@ const langs = require("langs");
 const colors = require("colors");
 
 
-console.log(franc('Alle menslike wesens word vry'));
+//Declare variables
+const langCode = franc('Alle menslike wesens word vry');
+const langugage = langs.where("3", langCode);
 
-
-
+console.log(langugage.name);
 
 //Challenges:
 //problem 1: franc version 6 is written in ES module and not commonJS. This means "required" doesnt work.
