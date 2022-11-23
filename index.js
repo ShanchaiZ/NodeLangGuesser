@@ -3,16 +3,20 @@ import { createRequire } from "module";
 const require = createRequire(import.meta.url);
 
 //Installed and require the dependencies:
-import {franc} from "franc";
+import { franc } from "franc";
 const langs = require("langs");
 // const colors = require("colors");
-
-
 const input = process.argv[2]; //node user input 
 const langCode = franc(input); //franc = method to detect the language of text
-const langugage = langs.where("3", langCode); //lang = language library that represents languages in 3 language codes.
 
-console.log(langugage.name);
+if (langCode === "und") {
+    console.log("Undetected Language. Please try again with more sample text!")
+} else {
+    const langugage = langs.where("3", langCode); //lang = language library that represents languages in 3 language codes.
+    console.log(`Our best guess is: ${langugage.name}`);
+}
+
+
 
 
 
@@ -30,5 +34,6 @@ console.log(langugage.name);
 //----------------------------------------
 // PsuedoCode steps:
 // 1. Installed dependencies
-// 2. Declared variables where franc is used to Detect the language of text and langs is a library that has all the language coded in ISO 639-1/2/3 language codes. 
+// 2. Declared variables where franc is used to Detect the language of text and langs is a library that has all the language coded in ISO 639-1/2/3 language codes.
 //3. Use user input for language to be detected by code. In node process.argv[0] is the executable path, process.argv[1] is the path to file and process.argv[2] is other arguments. we want to use process.argv[2] as user inputs for language.
+//4. If language detection fails => console.log "try again with more sample text!"
