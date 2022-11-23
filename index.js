@@ -5,6 +5,7 @@ const require = createRequire(import.meta.url);
 //Installed and require the dependencies:
 import {franc} from "franc";
 const langs = require("langs");
+
 const colors = require("colors");
 
 
@@ -13,6 +14,9 @@ const langCode = franc('Alle menslike wesens word vry');
 const langugage = langs.where("3", langCode);
 
 console.log(langugage.name);
+
+
+
 
 //Challenges:
 //problem 1: franc version 6 is written in ES module and not commonJS. This means "required" doesnt work.
@@ -25,3 +29,7 @@ console.log(langugage.name);
 // import { createRequire } from "module";
 // const require = createRequire(import.meta.url);
 //----------------------------------------
+// PsuedoCode steps:
+// 1. Installed dependencies
+// 2. Declared variables where franc is used to Detect the language of text and langs is a library that has all the language coded in ISO 639-1/2/3 language codes. 
+//3. 
